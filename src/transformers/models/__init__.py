@@ -164,6 +164,7 @@ from . import (
     roformer,
     sam,
     segformer,
+    point_bert,
     sew,
     sew_d,
     speech_encoder_decoder,

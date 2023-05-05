@@ -440,6 +440,7 @@ _import_structure = {
         "SamVisionConfig",
     ],
     "models.segformer": ["SEGFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP", "SegformerConfig"],
+    "models.point_bert": ["POINT_BERT_PRETRAINED_CONFIG_ARCHIVE_MAP", "PointBERTConfig"],
     "models.sew": ["SEW_PRETRAINED_CONFIG_ARCHIVE_MAP", "SEWConfig"],
     "models.sew_d": ["SEW_D_PRETRAINED_CONFIG_ARCHIVE_MAP", "SEWDConfig"],
     "models.speech_encoder_decoder": ["SpeechEncoderDecoderConfig"],
@@ -887,6 +888,7 @@ else:
     _import_structure["models.poolformer"].extend(["PoolFormerFeatureExtractor", "PoolFormerImageProcessor"])
     _import_structure["models.sam"].extend(["SamImageProcessor"])
     _import_structure["models.segformer"].extend(["SegformerFeatureExtractor", "SegformerImageProcessor"])
+    _import_structure["models.point_bert"].extend(["PointBERTFeatureExtractor", "PointBERTImageProcessor"])
     _import_structure["models.swin2sr"].append("Swin2SRImageProcessor")
     _import_structure["models.tvlt"].append("TvltImageProcessor")
     _import_structure["models.videomae"].extend(["VideoMAEFeatureExtractor", "VideoMAEImageProcessor"])
@@ -2380,6 +2382,17 @@ else:
             "SegformerLayer",
             "SegformerModel",
             "SegformerPreTrainedModel",
+        ]
+    )
+    _import_structure["models.point_bert"].extend(
+        [
+            "POINT_BERT_PRETRAINED_MODEL_ARCHIVE_LIST",
+            "PointBERTDecodeHead",
+            "PointBERTForImageClassification",
+            "PointBERTForSemanticSegmentation",
+            "PointBERTLayer",
+            "PointBERTModel",
+            "PointBERTPreTrainedModel",
         ]
     )
     _import_structure["models.sew"].extend(
@@ -4177,6 +4190,7 @@ if TYPE_CHECKING:
         SamVisionConfig,
     )
     from .models.segformer import SEGFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP, SegformerConfig
+    from .models.point_bert import POINT_BERT_PRETRAINED_CONFIG_ARCHIVE_MAP, PointBERTConfig
     from .models.sew import SEW_PRETRAINED_CONFIG_ARCHIVE_MAP, SEWConfig
     from .models.sew_d import SEW_D_PRETRAINED_CONFIG_ARCHIVE_MAP, SEWDConfig
     from .models.speech_encoder_decoder import SpeechEncoderDecoderConfig
@@ -4568,6 +4582,7 @@ if TYPE_CHECKING:
         from .models.poolformer import PoolFormerFeatureExtractor, PoolFormerImageProcessor
         from .models.sam import SamImageProcessor
         from .models.segformer import SegformerFeatureExtractor, SegformerImageProcessor
+        from .models.point_bert import PointBERTFeatureExtractor, PointBERTImageProcessor
         from .models.swin2sr import Swin2SRImageProcessor
         from .models.tvlt import TvltImageProcessor
         from .models.videomae import VideoMAEFeatureExtractor, VideoMAEImageProcessor
@@ -5795,6 +5810,15 @@ if TYPE_CHECKING:
             SegformerLayer,
             SegformerModel,
             SegformerPreTrainedModel,
+        )
+        from .models.point_bert import (
+            POINT_BERT_PRETRAINED_MODEL_ARCHIVE_LIST,
+            PointBERTDecodeHead,
+            PointBERTForImageClassification,
+            PointBERTForSemanticSegmentation,
+            PointBERTLayer,
+            PointBERTModel,
+            PointBERTPreTrainedModel,
         )
         from .models.sew import (
             SEW_PRETRAINED_MODEL_ARCHIVE_LIST,
